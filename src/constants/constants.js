@@ -1,4 +1,5 @@
 const GlobalConstants = {
+    serverUrl: 'http://localhost:8080',
     paths: {
         assets: '/assets'
     },
