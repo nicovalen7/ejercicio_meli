@@ -3,6 +3,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { Grid, Container, Card, CardContent, CardActionArea, Link } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
 import Breadcrumbs from '../breadcrumbs/Breadcrumbs';
+import GlobalConstants from '../../constants/constants';
 import './ResultsPage.scss';
 
 export default function ResultsPage({ location }) {
@@ -84,7 +85,7 @@ export default function ResultsPage({ location }) {
     };
 
     const ItemCard = ({item, isLast}) => (
-        <Link underline='none' component={RouterLink} to={`/items/${item.id}`} className="item-container">
+        <Link underline='none' component={RouterLink} to={`${GlobalConstants.routes.itemsRoute}/${item.id}`} className="item-container">
             <Card variant="outlined" className="item-card">
                 <CardActionArea className="clickable-section">
                     <Grid container>
@@ -95,7 +96,7 @@ export default function ResultsPage({ location }) {
                             <div className="item-price-text">
                                 {item.price}
                                 { item.shippable ? 
-                                    <img className="item-shippable-icon" src="/assets/ic_shipping.png" alt="product-image" />
+                                    <img className="item-shippable-icon" src={`${GlobalConstants.paths.assets}/ic_shipping.png`} alt="product-image" />
                                     : null
                                 }
                             </div>

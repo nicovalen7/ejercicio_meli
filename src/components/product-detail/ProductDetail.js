@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Grid, Container, Card, CardContent } from '@material-ui/core';
+import { Grid, Container, Card } from '@material-ui/core';
 import Breadcrumbs from '../breadcrumbs/Breadcrumbs';
 import './ProductDetail.scss';
 

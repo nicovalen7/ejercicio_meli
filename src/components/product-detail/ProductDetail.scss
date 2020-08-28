@@ -7,6 +7,7 @@
         .product-detail-general-info {
             margin-top: 32px;
             max-width: calc(100% - 680px);
+            margin-left: 36px;
 
             .product-detail-condition {
                 font-size: 14px;
@@ -60,7 +61,7 @@
 
     .product-image-container {
         max-width: 680px;
-        margin-right: 36px;
+        
         .product-detail-image {
             height: 680px;
             width: 680px;
