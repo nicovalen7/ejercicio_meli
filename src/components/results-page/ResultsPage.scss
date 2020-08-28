@@ -1,0 +1,95 @@
+.results-container {
+    padding-top: 16px;
+    
+    .breadcrumb-results {
+        padding-bottom: 10px;
+        list-style: none;
+        margin: 0 0 16px 0;
+        padding: 0;
+
+        li {
+            display: inline;
+            font-size: 14px;
+            color: #999999;
+        }
+        
+        li+li:before {
+            padding: 10px;
+            color: #999999;
+            content: ">";
+        }
+    }
+    
+    .products-container {
+        margin-bottom: 10px;
+        background-color: white;
+    }
+
+    
+    .item-container {
+        .item-image-container {
+            max-width: 212px;
+
+            .item-card-image {
+                height: 180px;
+                width: 180px;
+                border-radius: 4px;
+                margin: 16px;
+            }
+        }
+
+        .item-card {
+            height:212px;
+            border: none;
+
+            .item-price-text {
+                font-size: 24px;
+                margin: 32px 0;
+            }
+
+            .item-name-text {
+                font-size: 18px;
+            }
+
+            .item-city-text {
+                margin-top: 32px;
+                font-size: 12px;
+            }
+
+            .item-shippable-icon {
+                padding-left: 10px;
+            }
+            
+            .clickable-section {
+                height: 212px;
+            }
+        }
+
+        .card-border-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .card-item-border {
+                width: calc(100% - 30px);
+                height: 1px;
+                background-color: #eeeeee;
+            }
+        }
+
+    
+        .item-card-ship-icon {
+            color: limegreen;
+            margin-left: 10px;
+        }
+    }
+
+
+    .item-card-image-loader {
+        height: 100px;
+        width: 100px;
+        margin: 20px;
+    }
+
+}

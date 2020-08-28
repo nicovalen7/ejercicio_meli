@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import HomePage from './components/homepage/HomePage';
 import SearchBar from './components/search-bar/SearchBar';
+import ResultsPage from './components/results-page/ResultsPage';
 
 import './App.scss';
 
@@ -14,6 +15,7 @@ const App = () => (
         <div className="app-container">
             <Switch>
                 <Route exact path='/' component={HomePage} />
+                <Route exact path='/items' component={ResultsPage} />
             </Switch>
         </div>
     </BrowserRouter>
