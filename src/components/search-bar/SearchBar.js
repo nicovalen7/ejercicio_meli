@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { IconButton, InputBase, Container, Paper, Toolbar, AppBar, Grid, Link } from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
+import { InputBase, Container, Paper, Toolbar, AppBar, Grid, Link } from '@material-ui/core';
 import './SearchBar.scss';
 
 export default function SearchBar() {
@@ -14,7 +13,7 @@ export default function SearchBar() {
   return (
     <div className="search-bar">
       <AppBar position="static" className="root">
-        <Container maxWidth="md"> 
+        <Container maxWidth="lg"> 
           <Toolbar className="toolbar">
                 <Grid container justify="center" >
                     <Grid item xs={1} className="logo-container">

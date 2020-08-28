@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { Grid, Container, Card, CardContent, CardActionArea, CardMedia, Link } from '@material-ui/core';
+import { Grid, Container, Card, CardContent, CardActionArea, Link } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
+import Breadcrumbs from '../breadcrumbs/Breadcrumbs';
 import './ResultsPage.scss';
 
 export default function ResultsPage({ location }) {
@@ -53,14 +54,6 @@ export default function ResultsPage({ location }) {
         }
     ]
 
-    const BreadCrumbs = () => (
-        <ul className="breadcrumb-results">
-            <li>Categoría</li>
-            <li>Subcategoría</li>
-            <li><b>Producto</b></li>
-        </ul>
-    );
-
     const Loader = () => {
         return(
             <React.Fragment>
@@ -98,7 +91,7 @@ export default function ResultsPage({ location }) {
                         <Grid item xs={3} className="item-image-container">
                             <img className="item-card-image" src={`/assets/${item.picture}`} alt="product-image" />
                         </Grid>
-                        <Grid item xs={7}>
+                        <Grid item xs={8}>
                             <div className="item-price-text">
                                 {item.price}
                                 { item.shippable ? 
@@ -110,7 +103,7 @@ export default function ResultsPage({ location }) {
                                 {item.name}
                             </div>
                         </Grid>
-                        <Grid item xs={2}>
+                        <Grid item xs={1}>
                             <div className="item-city-text">
                                 {item.city}
                             </div>
@@ -128,10 +121,10 @@ export default function ResultsPage({ location }) {
     )
 
     return (
-        <Container maxWidth="md" className="results-container">
+        <Container maxWidth="lg" className="results-container">
             <Grid container direction="row" justify="center" alignItems="center">
                 <Grid item xs={12}>
-                    <BreadCrumbs />
+                    <Breadcrumbs />
                     <div className="products-container">
                         {
                             mockedProducts.map((item, index) => <ItemCard item={item} isLast={index === mockedProducts.length - 1} key={item.id} />)
