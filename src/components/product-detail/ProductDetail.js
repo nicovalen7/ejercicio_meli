@@ -9,6 +9,7 @@ export default function ProductDetail({ match }) {
     const selectedId = match.params.id;
     let [isLoading, setLoading] = useState(false);
     const [item, setItem] = useState({});
+    const [categoriesBreadcrumbs, setBreadcrumbs] = useState([]);
 
     useEffect(() => {
         setLoading(true);
@@ -18,6 +19,7 @@ export default function ProductDetail({ match }) {
             })
             .then(details => {
                 setItem(details);
+                setBreadcrumbs(details.categories);
             })
             .catch(e => {
                 console.log(e);
@@ -101,7 +103,7 @@ export default function ProductDetail({ match }) {
         <Container maxWidth="lg" className="product-container">
             <Grid container direction="row" justify="center" alignItems="center">
                 <Grid item xs={12}>
-                    <Breadcrumbs />
+                    <Breadcrumbs categories={categoriesBreadcrumbs}/>
                     {
                         isLoading ?
                             <Loader />

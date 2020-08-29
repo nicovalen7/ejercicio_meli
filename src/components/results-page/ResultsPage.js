@@ -40,7 +40,7 @@ export default function ResultsPage({ location }) {
                                         <Grid item xs={3} className="item-image-container">
                                             <Skeleton animation="pulse" variant="circle" className="item-card-image-loader" />
                                         </Grid>
-                                        <Grid item xs={8}>
+                                        <Grid item xs={8} className="item-info-container">
                                             <div className="item-price-text">
                                                 <Skeleton animation="pulse" height={40} style={{ marginBottom: 20 }} width="20%" />
                                                 <Skeleton animation="pulse" height={40} width="50%" />
@@ -100,12 +100,12 @@ export default function ResultsPage({ location }) {
         <Container maxWidth="lg" className="results-container">
             <Grid container direction="row" justify="center" alignItems="center">
                 <Grid item xs={12}>
-                    <Breadcrumbs />
+                    <Breadcrumbs categories={[]}/>
                     <div className="products-container">
                         {
                             isLoading ?
                             <Loader />
-                            : items.map((item, index) => <ItemCard item={item} isLast={index === items.length - 1} key={item.id} />)
+                            : items.map((item, index) => <ItemCard item={item} isLast={!items[index + 1]} key={item.id} />)
                         }
                     </div>
                 </Grid>

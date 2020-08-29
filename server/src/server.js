@@ -2,7 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import axios from 'axios'
-import { parseSearchResult, parseItemDetails, parseDescription } from './helpers';
+import { parseSearchResult, parseItemDetails, parseDescription, parseCategories } from './helpers';
 
 const app = express();
 
@@ -32,8 +32,18 @@ app.get('/api/items/:id', (req, res) => {
             const itemResponse = responses[0];
             const descriptionResponse = responses[1];
             let itemDetailsParsed = parseItemDetails(itemResponse.data);
+            const category = itemDetailsParsed.category_id;
             itemDetailsParsed.description = parseDescription(descriptionResponse.data);
-            res.status(200).json(itemDetailsParsed);
+            // Obtener categorias del producto
+            axios.get(`https://api.mercadolibre.com/categories/${category}`)
+                .then(categoryResponse => {
+                    itemDetailsParsed.categories = parseCategories(categoryResponse.data);
+                    res.status(200).json(itemDetailsParsed);
+                })
+                .catch(e => {
+                    console.log(e);
+                    res.status(500).json(e);
+                })
         })
     )
     .catch(errs => {
