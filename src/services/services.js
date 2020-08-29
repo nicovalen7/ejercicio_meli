@@ -10,3 +10,7 @@ const params = {
 export const searchItems = (query) => {
     return fetch(`${GlobalConstants.serverUrl}/api/items?q=${query}`, params);
 }
+
+export const getItemDetails = (id) => {
+    return fetch(`${GlobalConstants.serverUrl}/api/items/${id}`, params);
+}

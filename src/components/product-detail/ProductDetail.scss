@@ -16,7 +16,7 @@
     
             .product-detail-name {
                 font-size: 24px;
-                padding-bottom: 32px;
+                padding: 0 32px 32px 0;
             }
     
             .product-detail-price {
@@ -65,6 +65,12 @@
         .product-detail-image {
             height: 680px;
             width: 680px;
+        }
+
+        .product-detail-image-loader {
+            height: 500px;
+            width: 500px;
+            margin: 20px;
         }
     }
 }

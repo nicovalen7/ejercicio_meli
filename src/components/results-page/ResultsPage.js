@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { Grid, Container, Card, CardContent, CardActionArea, Link } from '@material-ui/core';
+import { Grid, Container, Card, CardActionArea, Link } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
 import Breadcrumbs from '../breadcrumbs/Breadcrumbs';
 import GlobalConstants from '../../constants/constants';
@@ -31,30 +31,31 @@ export default function ResultsPage({ location }) {
 
     const Loader = () => {
         return(
-            <React.Fragment>
+            <div className="item-container">
                 {
                     Array.from(new Array(4)).map((item, i) => (
-                        <Card variant="outlined" className="item-card" key={i}>
-                            <CardActionArea className="clickable-section">
-                                <Grid container>
-                                    <Grid item xs={2}>
-                                        <Skeleton animation="wave" variant="circle" className="item-card-image-loader" />
+                        <div key={i}>
+                            <Card variant="outlined" className="item-card">
+                                    <Grid container>
+                                        <Grid item xs={3} className="item-image-container">
+                                            <Skeleton animation="pulse" variant="circle" className="item-card-image-loader" />
+                                        </Grid>
+                                        <Grid item xs={8}>
+                                            <div className="item-price-text">
+                                                <Skeleton animation="pulse" height={40} style={{ marginBottom: 20 }} width="20%" />
+                                                <Skeleton animation="pulse" height={40} width="50%" />
+                                            </div>
+                                        </Grid>
                                     </Grid>
-                                    <Grid item xs={10}>
-                                        <CardContent>
-                                            <React.Fragment>
-                                                <Skeleton animation="wave" height={40} style={{ marginBottom: 6 }} width="20%" />
-                                                <Skeleton animation="wave" height={40} width="50%" />
-                                            </React.Fragment>
-                                        </CardContent>
-                                    </Grid>
-                                </Grid>
-                            </CardActionArea>
-                        </Card>
+                            </Card>
+                            <div className="card-border-container">
+                                <div className="card-item-border"></div>
+                            </div>
+                        </div>
                     ))
                 }
                 
-            </React.Fragment>
+            </div>
         )
     };
 
