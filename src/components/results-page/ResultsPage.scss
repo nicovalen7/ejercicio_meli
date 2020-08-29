@@ -7,43 +7,49 @@
     }
     
     .item-container {
-        .item-image-container {
-            max-width: 212px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            
-            .item-card-image {
-                border-radius: 4px;
-                margin: 16px;
-                max-height: 180px;
-                max-width: 180px;
-                min-height: 100px;
-                min-width: 100px;
-            }
-        }
-
+        
         .item-card {
             height:212px;
             border: none;
-
-            .item-price-text {
-                font-size: 24px;
-                margin: 32px 0;
+            
+            .item-image-container {
+                max-width: 212px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                
+                .item-card-image {
+                    border-radius: 4px;
+                    margin: 16px;
+                    max-height: 180px;
+                    max-width: 180px;
+                    min-height: 100px;
+                    min-width: 100px;
+                }
             }
 
-            .item-name-text {
-                font-size: 18px;
+            .item-info-container {
+                height: 212px;
+
+                .item-price-text {
+                    font-size: 24px;
+                    margin: 32px 0;
+                }
+    
+                .item-name-text {
+                    font-size: 18px;
+                }
+    
+                .item-city-text {
+                    margin-top: 32px;
+                    font-size: 12px;
+                }
+    
+                .item-shippable-icon {
+                    padding-left: 10px;
+                }
             }
 
-            .item-city-text {
-                margin-top: 32px;
-                font-size: 12px;
-            }
-
-            .item-shippable-icon {
-                padding-left: 10px;
-            }
             
             .clickable-section {
                 height: 212px;

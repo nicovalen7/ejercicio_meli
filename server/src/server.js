@@ -24,22 +24,21 @@ app.get('/api/items', (req, res) => {
 
 app.get('/api/items/:id', (req, res) => {
     const itemId = req.params.id;
-    axios.get(`https://api.mercadolibre.com/items/${itemId}`)
-    .then(itemResponse => {
-        let itemDetailsParsed = parseItemDetails(itemResponse.data);
-        axios.get(`https://api.mercadolibre.com/items/${itemId}/description`)
-        .then(descriptionResponse => {
+    const reqDetails = axios.get(`https://api.mercadolibre.com/items/${itemId}`);
+    const reqDescription = axios.get(`https://api.mercadolibre.com/items/${itemId}/description`);
+    axios.all([reqDetails, reqDescription])
+    .then(
+        axios.spread((...responses) => {
+            const itemResponse = responses[0];
+            const descriptionResponse = responses[1];
+            let itemDetailsParsed = parseItemDetails(itemResponse.data);
             itemDetailsParsed.description = parseDescription(descriptionResponse.data);
             res.status(200).json(itemDetailsParsed);
         })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        })
-    })
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
+    )
+    .catch(errs => {
+        console.log(errs);
+        res.status(500).json(errs);
     })
 });
 

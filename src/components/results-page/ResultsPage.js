@@ -67,7 +67,7 @@ export default function ResultsPage({ location }) {
                         <Grid item xs={3} className="item-image-container">
                             <img className="item-card-image" src={item.picture} alt="product-image" />
                         </Grid>
-                        <Grid item xs={8}>
+                        <Grid item xs={8} className="item-info-container">
                             <div className="item-price-text">
                                 $ {item.price}
                                 { item.free_shipping ? 
@@ -79,7 +79,7 @@ export default function ResultsPage({ location }) {
                                 {item.title}
                             </div>
                         </Grid>
-                        <Grid item xs={1}>
+                        <Grid item xs={1} className="item-info-container">
                             <div className="item-city-text">
                                 {item.state}
                             </div>
