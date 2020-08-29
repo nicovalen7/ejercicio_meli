@@ -34,7 +34,7 @@
   },
   "scripts": {
     "start": "npx webpack-dev-server --mode development",
-    "build": "npx webpack --mode development"
+    "build": "npx webpack --mode production"
   },
   "repository": {
     "type": "git",

@@ -5,9 +5,10 @@
         margin: 10px 0;
 
         .product-detail-general-info {
-            margin-top: 32px;
+            padding: 32px 32px 32px 0;
+            margin-left: 37px;
+            min-width: 200px;
             max-width: calc(100% - 680px);
-            margin-left: 36px;
 
             .product-detail-condition {
                 font-size: 14px;
@@ -25,7 +26,6 @@
             }
 
             .buy-button-container {
-                padding-right: 32px;
                 .buy-product-button {
                     background-color: #3483FA;
                     border: none;
@@ -40,7 +40,6 @@
                     border-radius: 4px;
                 }
             }
-
         }
 
         .product-detail-description {
@@ -60,11 +59,18 @@
     }
 
     .product-image-container {
+        padding: 32px;
         max-width: 680px;
+        max-height: 680px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         
         .product-detail-image {
-            height: 680px;
-            width: 680px;
+            min-height: 300px;
+            max-height: 680px;
+            min-width: 300px;
+            max-width: 680px;
         }
 
         .product-detail-image-loader {
