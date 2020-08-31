@@ -13,13 +13,13 @@ const App = () => (
     <BrowserRouter>
         <CssBaseline />
         <SearchBar />
-        <div className="app-container">
+        <article className="app-container">
             <Switch>
                 <Route exact path='/' component={HomePage} />
                 <Route exact path='/items' component={ResultsPage} />
                 <Route exact path='/items/:id' component={ProductDetail} />
             </Switch>
-        </div>
+        </article>
     </BrowserRouter>
 );
 

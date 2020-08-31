@@ -18,11 +18,14 @@
             .product-detail-name {
                 font-size: 24px;
                 padding: 0 32px 32px 0;
+                margin: 0;
             }
     
             .product-detail-price {
                 font-size: 46px;
+                font-weight: normal;
                 padding-bottom: 32px;
+                margin: 0;
             }
 
             .buy-button-container {
@@ -34,6 +37,7 @@
                     text-decoration: none;
                     display: inline-block;
                     font-size: 18px;
+                    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
                     height: 45px;
                     width: 100%;
                     cursor: pointer;
@@ -48,12 +52,15 @@
 
             .product-description-title {
                 font-size: 28px;
+                font-weight: normal;
                 padding-bottom: 32px;
+                margin: 0;
             }
 
             .product-description-text {
                 font-size: 16px;
-                color: #999999
+                color: #999999;
+                margin: 0;
             }
         }
     }

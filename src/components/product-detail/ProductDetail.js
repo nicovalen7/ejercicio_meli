@@ -69,31 +69,35 @@ export default function ProductDetail({ match }) {
         <Card variant="outlined" className="product-detail">
             <Grid container>
                 <Grid item xs={7} className="product-image-container">
-                    <img className="product-detail-image" alt="product-img" src={item.picture} />
+                    <img className="product-detail-image" alt="Imagen del producto" src={item.picture} />
                 </Grid>
                 <Grid item xs={5} className="product-detail-general-info">
-                    <div className="product-detail-condition">
-                        {parseCondition(item.condition)} - {item.sold_quantity} vendidos
-                    </div>
-                    <div className="product-detail-name">
-                        <b>{item.title}</b>
-                    </div>
-                    <div className="product-detail-price">
-                        $ {item.price}
-                    </div>
-                    <div className="buy-button-container">
-                        <button className="buy-product-button">
-                            Comprar
-                        </button>
-                    </div>
+                    <section>
+                        <div className="product-detail-condition">
+                            {parseCondition(item.condition)} - {item.sold_quantity} vendidos
+                        </div>
+                        <h1 className="product-detail-name">
+                            {item.title}
+                        </h1>
+                        <h2 className="product-detail-price">
+                            $ {item.price}
+                        </h2>
+                        <div className="buy-button-container">
+                            <button className="buy-product-button">
+                                Comprar
+                            </button>
+                        </div>
+                    </section>
                 </Grid>
                 <Grid item xs={8} className="product-detail-description">
-                    <div className="product-description-title">
-                        Descripción del producto
-                    </div>
-                    <div className="product-description-text">
-                        {item.description}
-                    </div>
+                    <section>
+                        <h2 className="product-description-title">
+                            Descripción del producto
+                        </h2>
+                        <p className="product-description-text">
+                            {item.description}
+                        </p>
+                    </section>
                 </Grid>
             </Grid>
         </Card>

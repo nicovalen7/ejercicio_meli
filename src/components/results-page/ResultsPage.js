@@ -60,40 +60,42 @@ export default function ResultsPage({ location }) {
     };
 
     const ItemCard = ({item, isLast}) => (
-        <Link underline='none' component={RouterLink} to={`${GlobalConstants.routes.itemsRoute}/${item.id}`} className="item-container">
-            <Card variant="outlined" className="item-card">
-                <CardActionArea className="clickable-section">
-                    <Grid container>
-                        <Grid item xs={3} className="item-image-container">
-                            <img className="item-card-image" src={item.picture} alt="product-image" />
+        <nav>
+            <Link underline='none' component={RouterLink} to={`${GlobalConstants.routes.itemsRoute}/${item.id}`} className="item-container">
+                <Card variant="outlined" className="item-card">
+                    <CardActionArea className="clickable-section">
+                        <Grid container>
+                            <Grid item xs={3} className="item-image-container">
+                                <img className="item-card-image" src={item.picture} alt="Thumbnail del producto" />
+                            </Grid>
+                            <Grid item xs={8} className="item-info-container">
+                                <div className="item-price-text">
+                                    $ {item.price}
+                                    { item.free_shipping ? 
+                                        <img className="item-shippable-icon" src={`${GlobalConstants.paths.assets}/ic_shipping.png`} alt="Free Shipping icon" />
+                                        : null
+                                    }
+                                </div>
+                                <h3 className="item-name-text">
+                                    {item.title}
+                                </h3>
+                            </Grid>
+                            <Grid item xs={1} className="item-info-container">
+                                <div className="item-city-text">
+                                    {item.state}
+                                </div>
+                            </Grid>
                         </Grid>
-                        <Grid item xs={8} className="item-info-container">
-                            <div className="item-price-text">
-                                $ {item.price}
-                                { item.free_shipping ? 
-                                    <img className="item-shippable-icon" src={`${GlobalConstants.paths.assets}/ic_shipping.png`} alt="product-image" />
-                                    : null
-                                }
-                            </div>
-                            <div className="item-name-text">
-                                {item.title}
-                            </div>
-                        </Grid>
-                        <Grid item xs={1} className="item-info-container">
-                            <div className="item-city-text">
-                                {item.state}
-                            </div>
-                        </Grid>
-                    </Grid>
-                </CardActionArea>
-            </Card>
-            { !isLast ?
-                <div className="card-border-container">
-                    <div className="card-item-border"></div>
-                </div>
-                : null
-            }
-        </Link>
+                    </CardActionArea>
+                </Card>
+                { !isLast ?
+                    <div className="card-border-container">
+                        <div className="card-item-border"></div>
+                    </div>
+                    : null
+                }
+            </Link>
+        </nav>
     )
 
     return (

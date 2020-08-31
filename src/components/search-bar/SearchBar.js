@@ -27,7 +27,7 @@ export default function SearchBar() {
           <Toolbar className="toolbar">
                 <Grid container justify="center" >
                     <Grid item xs={1} className="logo-container">
-                        <img src={`${GlobalConstants.paths.assets}/Logo_ML.png`} alt="logo" className="logo" />
+                        <img src={`${GlobalConstants.paths.assets}/Logo_ML.png`} alt="Logo MercadoLibre" className="logo" />
                     </Grid>
                     <Grid item xs={11}>
                         <Paper className="input-background">
@@ -39,7 +39,7 @@ export default function SearchBar() {
                                 onKeyDown={handleKeyDown}
                             />
                             <Link underline='none' component={RouterLink} to={`${GlobalConstants.routes.searchRoute}=${currentQuery}`} className="search-icon-container">
-                              <img src={`${GlobalConstants.paths.assets}/ic_Search.png`} alt="search-icon" />
+                              <img src={`${GlobalConstants.paths.assets}/ic_Search.png`} alt="Search icon" />
                             </Link>
                         </Paper>
                     </Grid>
